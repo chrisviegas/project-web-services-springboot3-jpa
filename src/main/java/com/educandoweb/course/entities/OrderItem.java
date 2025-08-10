@@ -58,4 +58,20 @@ public class OrderItem {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public Double getSubTotal() {
+        return quantity * price;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        OrderItem orderItem = (OrderItem) o;
+        return id.equals(orderItem.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
 }
